@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: rgb(28, 27, 27) ;
+  font-family: Roboto, Arial;
 }
 header {
   display: flex;
@@ -9,7 +10,8 @@ header {
   height: 60px;
   width: 100%;
   flex-direction: row ;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 .left-section {
@@ -22,6 +24,27 @@ header {
   align-items: center;
   
 }
+.searchbar {
+  flex: 1;
+  width: 600;
+  font-size: 16px;
+  height: 40px;
+  padding-left: 15px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-btn {
+  width: 45px;
+  flex-shrink: 0;
+  height: 40px;
+  border:  none;
+  margin-left: 0px;
+}
+
 
 .right-section {
   display: flex;
@@ -33,4 +56,14 @@ header {
   margin-top: 5px;
   display: flex;
   color: white;
+}
+
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cart-icon {
+  width: 40px;
 }
