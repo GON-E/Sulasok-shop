@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background-color: rgb(28, 27, 27) ;
+}
+header {
+  display: flex;
+  position: fixed;
+  background-color: black;
+  height: 60px;
+  width: 100%;
+  flex-direction: row ;
+  justify-content: space-evenly;
+}
+
+.left-section {
+  display: flex;
+}
+
+.middle-section {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  
+}
+
+.right-section {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+ 
+.returns, .orders {
+  margin-top: 5px;
+  display: flex;
+  color: white;
+}
