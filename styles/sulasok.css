@@ -129,12 +129,17 @@ button {
   align-items:start;
   margin-bottom: 10px;
   width: 80%;
+  justify-content: center;
 }
 .star-rating{
   max-width: 100%;
   object-fit: cover;
 }
-
+.product-rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .product-quantity-container {
   margin-bottom: 10px;
 }
