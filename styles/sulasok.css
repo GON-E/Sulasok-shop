@@ -118,8 +118,28 @@ header {
   align-items:start;
   margin-bottom: 10px;
 }
-
 .star-rating{
   max-width: 100%;
   object-fit: cover;
+}
+
+.product-quantity-container {
+  margin-bottom: 10px;
+}
+
+.add-to-cart-btn-container {
+  display: flex; 
+  text-align: center;
+  justify-content: center;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(202, 196, 30);
+  border: none;
+  border-radius: 15px;
+}
+
+.add-to-cart-btn:hover {
 }
