@@ -105,24 +105,30 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 180px;
+  height: 200px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .standard-image-dsgn {
-  height: 200px;
-  width: 200px;
+  max-width: 100%;
 }
 
-.product-name,  .product-price, .Product-name-container {
+.product-name,  .product-price-container, .Product-name-container {
   color: white;
   margin-bottom: 10px;
 }
-
+.product-name {
+  font-size: 18px;
+}
+.product-price{ 
+  font-size: 16px;
+}
 .rating-container {
   display: flex;  
   align-items:start;
   margin-bottom: 10px;
+  width: 80%;
 }
 .star-rating{
   max-width: 100%;
