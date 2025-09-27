@@ -126,7 +126,7 @@ button {
 }
 .rating-container {
   display: flex;  
-  align-items:start;
+  align-items: center;
   margin-bottom: 10px;
   width: 80%;
   justify-content: center;
@@ -139,6 +139,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: teal;
 }
 .product-quantity-container {
   margin-bottom: 10px;
