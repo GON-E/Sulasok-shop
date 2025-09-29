@@ -47,7 +47,16 @@ const products = [{
     count: 100
   },
   priceCents: 20000
-}];
+}, {
+  image: 'images/dildo.jpg',
+  name: "Dildo ni neel",
+  rating: {
+    star: 3,
+    count: 69
+  },
+  priceCents: 6969
+}
+];
 
 // Combine all strings
 let productsHTML = '';
