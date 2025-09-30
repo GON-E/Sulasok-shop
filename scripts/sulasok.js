@@ -1,9 +1,3 @@
-//Represents a list
-// Whole Data for the products
-
-// SAVE DATA (DATA STRUCT)
-
-// Combine all strings
 let productsHTML = '';
 
 
