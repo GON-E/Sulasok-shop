@@ -28,7 +28,7 @@ products.forEach((product) => {
           </span>
         </div>
         <div class="product-quantity-container">
-          <select class="quantity-selector">
+          <select class="quantity-selector js-quantity-selector-${product.id}">
             <option selected value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -58,7 +58,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       // DATA ATTRIBUTE: Getting all the data 
       const productId  = button.dataset.productId; // Data ex. Vape
       let matchItem; // Accumulator
-
+      let selectedQuantity = document.querySelector()
 
       //If already in the cart
       cart.forEach((item) => { 
@@ -85,8 +85,8 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       })
       // Cart quantity changes
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-      console.log(cartQuantity);
-      console.log(cart);
+
+      console.log(selectedQuantity);
     });
   }
 );
