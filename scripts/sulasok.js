@@ -42,14 +42,41 @@ products.forEach((product) => {
           </select>
         </div>
         <div class="add-to-cart-btn-container">
-          <button class="add-to-cart-btn">
-            Add to Cart
+          <button class="add-to-cart-btn js-add-to-cart"
+            data-product-id="${product.id}">
+              Add to Cart
           </button>
         </div>
     </div>`
 
 });
 
-console.log(productsHTML);
-
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+      // DATA ATTRIBUTE: Getting all the data 
+      const productId  = button.dataset.productId; // Data ex. Vape
+      let matchItem; // Accumulator
+
+
+      //If already in the cart
+      cart.forEach((item) => { 
+        if(productId === item.productId) {
+          matchItem = item; // Assigning
+        }
+      })
+      // If there is a same item it becomes true
+      if(matchItem){
+        matchItem.quantity += 1;
+      } else {
+        // Push Cart
+        cart.push({
+        productId: productId,
+        quantity: 1
+      });
+      }
+      console.log(cart);
+    });
+  }
+);

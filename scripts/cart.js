@@ -1,0 +1,2 @@
+// Empty cart
+const cart = [];
