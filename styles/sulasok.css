@@ -6,7 +6,7 @@ body {
 }
 img {
   overflow-clip-margin: content-box;
-  overflow: clip;
+  overflow: clip
 }
 header {
   display: flex;
@@ -69,6 +69,7 @@ button {
   text-align: center;
   justify-content: center;
   margin-right: 20px;
+  gap: 10px;
 }
  
 .returns, .orders {
@@ -81,10 +82,26 @@ button {
   display: flex;
   align-items: center;
   margin-right: 10px;
+  position: relative;
+}
+.orders-link, .shopping-cart {
+  cursor: pointer;
+}
+.orders-link:hover, .shopping-cart:hover{
+  /*Substitute border with outline*/
+  outline: solid 1px white;
 }
 
 .cart-icon {
-  width: 40px;
+  width: 60px;
+
+}
+.cart-quantity {
+  color: teal;
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  right: 20px;
 }
 
 .product-grid {
@@ -101,7 +118,7 @@ button {
   flex-direction: column;
   border: 1px none;
   background-color: black;
-}
+} 
 
 .product-container {
   padding: 40px 25px 25px 25px;

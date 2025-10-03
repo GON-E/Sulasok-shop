@@ -1,6 +1,6 @@
 const products = [{
   // Randomize Id
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item1',
   image: 'images/M69.jpg',
   name: 'M69: Rifle',
   rating: {
@@ -9,7 +9,7 @@ const products = [{
   },
   priceCents: 690000 
 }, { 
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item2',
   image: 'images/vape.png',
   name: 'Vape',
   rating: {
@@ -18,7 +18,7 @@ const products = [{
   },
   priceCents: 2000
 }, {
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item3',
   image: 'images/cherry-mobile.jpg',
   name: 'Cherry Mobile',
   rating: {
@@ -27,7 +27,7 @@ const products = [{
   },
   priceCents: 560000
 }, {
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item4',
   image: 'images/c69.jpg',
   name: 'C69',
   rating: {
@@ -36,7 +36,7 @@ const products = [{
   },
   priceCents: 96000000
 }, {
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item5',
   image: 'images/whiteT.jpg',
   name: 'White T-Shirt',
   rating: {
@@ -45,7 +45,7 @@ const products = [{
   },
   priceCents: 20000
 }, {
-  id: Math.floor(Math.random() * 1000000),
+  id: 'item6',
   image: 'images/dildo.jpg',
   name: "Dildo ni neel",
   rating: {

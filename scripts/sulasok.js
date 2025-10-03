@@ -70,12 +70,20 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       if(matchItem){
         matchItem.quantity += 1;
       } else {
-        // Push Cart
+        // Push in Cart 
         cart.push({
         productId: productId,
         quantity: 1
       });
       }
+
+      let cartQuantity = 0;
+      // Loop through the array Cart
+      cart.forEach((item) => {
+      // Save all the quantity in cartQuantity
+        cartQuantity += item.quantity;
+      })
+      console.log(cartQuantity);
       console.log(cart);
     });
   }
