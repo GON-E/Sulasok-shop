@@ -1,6 +1,5 @@
 let productsHTML = '';
 
-
 // saves the object in the product
 products.forEach((product) => {
   // Accumulator
@@ -56,24 +55,24 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
       // DATA ATTRIBUTE: Getting all the data 
-      const productId  = button.dataset.productId; // Data ex. Vape
+      const productId  = button.dataset.productId; // Data Id like item1 DECLARATION OF PRODUCTID
       let matchItem; // Accumulator
-      let selectedQuantity = document.querySelector()
-
+      let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
+      let finalValue = Number(selectedQuantity);
       //If already in the cart
-      cart.forEach((item) => { 
+      cart.forEach((item) => {
         if(productId === item.productId) {
           matchItem = item; // Assigning
         }
       })
       // If there is a same item it becomes true
       if(matchItem){
-        matchItem.quantity += 1;
+        matchItem.quantity += finalValue
       } else {
         // Push in Cart 
         cart.push({
         productId: productId,
-        quantity: 1
+        quantity: finalValue
       });
       }
 
@@ -85,7 +84,6 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       })
       // Cart quantity changes
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-
       console.log(selectedQuantity);
     });
   }
