@@ -1,4 +1,6 @@
-const products = [{
+
+
+export const products = [{
   // Randomize Id
   id: 'item1',
   image: 'images/M69.jpg',

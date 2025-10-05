@@ -1,5 +1,8 @@
-let productsHTML = '';
 
+import { cart } from './cart.js'; // from cart.js
+import { products } from './products.js'; // from products.js
+let notificationTimeout = {}; // Object for timeout
+let productsHTML = '';
 // saves the object in the product
 products.forEach((product) => {
   // Accumulator
@@ -53,16 +56,10 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-
-document.querySelectorAll('.js-add-to-cart').forEach((button) => {
-    button.addEventListener('click', () => {
-      // DATA ATTRIBUTE: Getting all the data 
-      const {productId} = button.dataset; // Data Id like item1 DECLARATION OF PRODUCTID
-      let matchItem; // Accumulator
-      let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
-      let quantity = Number(selectedQuantity);
-
-
+function addToCart(productId) {
+        let matchItem; // Accumulator
+        let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
+        let quantity = Number(selectedQuantity);    
       //If already in the cart
       cart.forEach((item) => {
         if(productId === item.productId) {
@@ -76,7 +73,16 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         // Push in Cart 
         cart.push({productId, quantity});
       }
+}
+
+document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+      // DATA ATTRIBUTE: Getting all the data 
+      const {productId} = button.dataset; // Data Id like item1 DECLARATION OF PRODUCTID
+      addToCart(productId);
       showAddedNotification(productId);
+
+
       let cartQuantity = 0;
       // Loop through the array Cart
       cart.forEach((item) => {
@@ -85,21 +91,19 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       })
       // Cart quantity changes
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-      console.log(selectedQuantity);
     });
   }
 );
 
   function showAddedNotification(productId) { 
     let notification = document.querySelector(`.js-added-to-cart[data-product-id="${productId}"]`);
-
     if(!notification) return; 
 
     notification.innerHTML = 'Added!'; // NOTIFICATION
 
-    clearTimeout(notification.timer) // RESET 
+    clearTimeout(notificationTimeout[productId]) // CLEAR TIMEOUT FOR CERTAINE PRODUCT 
 
-    notificationTimeout = setTimeout(() => { // RESET TIMER
+    notificationTimeout[productId] = setTimeout(() => { // RESET TIMER
       notification.innerHTML = '';
     }, 1000);
   };
