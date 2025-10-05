@@ -40,6 +40,7 @@ products.forEach((product) => {
             <option value="10">10 </option>
           </select>
         </div>
+        <div class="added-to-cart js-added-to-cart" data-product-id="${product.id}"></div>
         <div class="add-to-cart-btn-container">
           <button class="add-to-cart-btn js-add-to-cart"
             data-product-id="${product.id}">
@@ -52,13 +53,16 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
       // DATA ATTRIBUTE: Getting all the data 
-      const productId  = button.dataset.productId; // Data Id like item1 DECLARATION OF PRODUCTID
+      const {productId} = button.dataset; // Data Id like item1 DECLARATION OF PRODUCTID
       let matchItem; // Accumulator
       let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
-      let finalValue = Number(selectedQuantity);
+      let quantity = Number(selectedQuantity);
+
+
       //If already in the cart
       cart.forEach((item) => {
         if(productId === item.productId) {
@@ -67,15 +71,12 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       })
       // If there is a same item it becomes true
       if(matchItem){
-        matchItem.quantity += finalValue
-      } else {
+        matchItem.quantity += quantity
+      } else {  
         // Push in Cart 
-        cart.push({
-        productId: productId,
-        quantity: finalValue
-      });
+        cart.push({productId, quantity});
       }
-
+      showAddedNotification(productId);
       let cartQuantity = 0;
       // Loop through the array Cart
       cart.forEach((item) => {
@@ -88,3 +89,18 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     });
   }
 );
+
+  function showAddedNotification(productId) { 
+    let notification = document.querySelector(`.js-added-to-cart[data-product-id="${productId}"]`);
+
+    if(!notification) return; 
+
+    notification.innerHTML = 'Added!'; // NOTIFICATION
+
+    clearTimeout(notification.timer) // RESET 
+
+    notificationTimeout = setTimeout(() => { // RESET TIMER
+      notification.innerHTML = '';
+    }, 1000);
+  };
+
