@@ -1,11 +1,11 @@
 
-import { cart } from './cart.js'; // from cart.js
+import { cart, addToCart } from './cart.js'; // from cart.js
 import { products } from './products.js'; // from products.js
 let notificationTimeout = {}; // Object for timeout
 let productsHTML = '';
 // saves the object in the product
 products.forEach((product) => {
-  // Accumulator
+  // Accumulator  
   productsHTML += `
   <div class="product-container">
         <div class="product-image-container">
@@ -61,9 +61,9 @@ function addToCart(productId) {
         let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
         let quantity = Number(selectedQuantity);    
       //If already in the cart
-      cart.forEach((item) => {
-        if(productId === item.productId) {
-          matchItem = item; // Assigning
+      cart.forEach((cartItem) => {
+        if(productId === cartItem.productId) {
+          matchItem = cartItem; // Assigning
         }
       })
       // If there is a same item it becomes true
@@ -75,22 +75,25 @@ function addToCart(productId) {
       }
 }
 
+function updateCartQuantity() {
+  let cartQuantity = 0;
+  // Loop through the array Cart
+  cart.forEach((item) => {
+      // Save all the quantity in cartQuantity
+    cartQuantity += item.quantity;
+  });
+      // Cart quantity changes
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
+
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
       // DATA ATTRIBUTE: Getting all the data 
       const {productId} = button.dataset; // Data Id like item1 DECLARATION OF PRODUCTID
       addToCart(productId);
       showAddedNotification(productId);
-
-
-      let cartQuantity = 0;
-      // Loop through the array Cart
-      cart.forEach((item) => {
-      // Save all the quantity in cartQuantity
-        cartQuantity += item.quantity;
-      })
-      // Cart quantity changes
-      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+      updateCartQuantity();
     });
   }
 );
