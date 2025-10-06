@@ -1,9 +1,9 @@
-
-import { cart, addToCart } from './cart.js'; // from cart.js
 import { products } from './products.js'; // from products.js
+import { cart, addToCart } from './cart.js'; // from cart.js
 let notificationTimeout = {}; // Object for timeout
 let productsHTML = '';
-// saves the object in the product
+// saves the object in the product  
+
 products.forEach((product) => {
   // Accumulator  
   productsHTML += `
@@ -56,25 +56,7 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-function addToCart(productId) {
-        let matchItem; // Accumulator
-        let selectedQuantity = document.querySelector(`.js-quantity-selector-${productId}`).value;
-        let quantity = Number(selectedQuantity);    
-      //If already in the cart
-      cart.forEach((cartItem) => {
-        if(productId === cartItem.productId) {
-          matchItem = cartItem; // Assigning
-        }
-      })
-      // If there is a same item it becomes true
-      if(matchItem){
-        matchItem.quantity += quantity
-      } else {  
-        // Push in Cart 
-        cart.push({productId, quantity});
-      }
-}
-
+// Handles Update in the web, not the actual cart... It stays here
 function updateCartQuantity() {
   let cartQuantity = 0;
   // Loop through the array Cart
@@ -85,7 +67,6 @@ function updateCartQuantity() {
       // Cart quantity changes
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }
-
 
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
