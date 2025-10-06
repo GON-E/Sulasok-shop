@@ -3,7 +3,7 @@
 export const products = [{
   // Randomize Id
   id: 'item1',
-  image: 'images/M69.jpg',
+  image: 'images/products/M69.jpg',
   name: 'M69: Rifle',
   rating: {
     star: 3,
@@ -12,7 +12,7 @@ export const products = [{
   priceCents: 690000 
 }, { 
   id: 'item2',
-  image: 'images/vape.png',
+  image: 'images/products/vape.png',
   name: 'Vape',
   rating: {
     star: 3,
@@ -21,7 +21,7 @@ export const products = [{
   priceCents: 2000
 }, {
   id: 'item3',
-  image: 'images/cherry-mobile.jpg',
+  image: 'images/products/cherry-mobile.jpg',
   name: 'Cherry Mobile',
   rating: {
     star: 3,  
@@ -30,7 +30,7 @@ export const products = [{
   priceCents: 560000
 }, {
   id: 'item4',
-  image: 'images/c69.jpg',
+  image: 'images/products/c69.jpg',
   name: 'C69',
   rating: {
     star: 3,
@@ -39,7 +39,7 @@ export const products = [{
   priceCents: 96000000
 }, {
   id: 'item5',
-  image: 'images/whiteT.jpg',
+  image: 'images/products/whiteT.jpg',
   name: 'White T-Shirt',
   rating: {
     star: 3,
@@ -48,7 +48,7 @@ export const products = [{
   priceCents: 20000
 }, {
   id: 'item6',
-  image: 'images/dildo.jpg',
+  image: 'images/products/dildo.jpg',
   name: "Dildo ni neel",
   rating: {
     star: 3,

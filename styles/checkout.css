@@ -1,0 +1,63 @@
+body {
+  font-family: SUZE Mono, Arial;
+}
+
+.checkout-header, .header-content, .middle-section, .right-section {
+  display: flex;
+}
+
+.amazon-logo {
+  width: 100px;
+}
+
+.checkout-header {
+  flex: 1;
+  flex-shrink: 0;
+  height: 70px;
+  padding-left: 25px;
+  padding-right: 25px;
+  position: fixed;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.middle-section {
+  position: relative;
+  font-size: 25px;
+  align-items: center;
+}
+.return-to-home-link {
+  color: rgb(0, 113, 133);
+  text-decoration: none;
+}
+
+.right-section img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  align-items: center;
+}
+
+main {
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 150px;
+  margin-bottom: 110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -93,15 +93,17 @@ button {
 }
 
 .cart-icon {
-  width: 60px;
+  width: 70px;
 
 }
 .cart-quantity {
-  color: teal;
+  color: orange;
   position: absolute;
-  font-size: 20px;
+  font-size: 18px;
   top: 10px;
-  right: 13px;
+  right: 22px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .product-grid {
