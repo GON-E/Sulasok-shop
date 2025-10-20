@@ -1,72 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <title>Checkout</title>
-  <link rel="stylesheet" href="/styles/checkout.css">
-</head>
-<body>
-  <header class="checkout-header"> 
-    <div class="header-content">
-      <section class="left-section">
-        <!--LEFT SECTION-->
-        <a class=>
-          <img class="amazon-logo" 
-          src="images/logo/amazon-logo.png">
-        </a>
-      </section>
-      <!--MIDDLE SECTION-->
-      <section class="middle-section">
-        Checkout(
-        <a class="return-to-home-link" href="." data-testid="cart-quantity">20</a>
-        )
-      </section>
-      <!--RIGHT SECTION-->
-      <section class="right-section">
-        <img src="/images/logo/lock.png">
-      </section>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="/styles/checkout.css">
+  </head>
+  <body>
+    <header class="checkout-header"> 
+      <div class="header-content">
+        <section class="left-section">
+          <!--LEFT SECTION-->
+          <a class=>
+            <img class="amazon-logo" 
+            src="images/logo/amazon-logo.png">
+          </a>
+        </section>
+        <!--MIDDLE SECTION-->
+        <section class="middle-section">
+          Checkout(
+          <a class="return-to-home-link" href="." data-testid="cart-quantity">20</a>
+          )
+        </section>
+        <!--RIGHT SECTION-->
+        <section class="right-section">
+          <img src="/images/logo/lock.png">
+        </section>
+      </div>
     </header>
-    </div>
-    <!--MAIN-->
-    <main>
-      <div class="page-title">Review your Order </div>
-      <section class="checkout-grid">
-        <div class="cart-summary">
-          <div class="cart-item-container">
-            <div class="delivery-date">
-              Delivery date: <span class="js-delivery-date">Monday, October 20</span>
-            </div>
-            <!--START OF CART-ITEM-DETAILS-GRID-->
-            <div class="cart-item-details-grid">
-              <img src="/images/products/whiteT.jpg">
-              <div class="cart-item-details">
-                <div class="product-name">White Tshirt</div>
-                <div class="product-price">PHP 299</div>
-                <div class="product-quantity">
-                  Quantity: <span> 100</span>
-                  <span class="link-primary">Update</span>
-                  <span class="link-primary">Delete</span>
-                </div>
+      <!--MAIN-->
+      <main>
+        <div class="page-title">Review your Order </div>
+        <section class="checkout-grid">
+          <div class="cart-summary">
+            <div class="cart-item-container">
+              <div class="delivery-date">
+                Delivery date: <span class="js-delivery-date">Monday, October 20</span>
               </div>
-              <div class="delivery-options">
-                <div class="delivery-option-title">Choose a delivery  option:
-                </div>
-                <div class="delivery-option">
-                  <input type="radio">
-                  <div>
-                  <div class="delivery-option-date">Monday, October 20</div>
-                  <div class="delivery-option-price">FREE Shipping</div>
+              <!--START OF CART-ITEM-DETAILS-GRID-->
+              <div class="cart-item-details-grid">
+                <img src="/images/products/whiteT.jpg">
+                <div class="cart-item-details">
+                  <div class="product-name">White Tshirt</div>
+                  <div class="product-price">PHP 299</div>
+                  <div class="product-quantity">
+                    Quantity: <span> 100</span>
+                    <span class="link-primary">Update</span>
+                    <span class="link-primary">Delete</span>
                   </div>
                 </div>
+                <div class="delivery-options">
+                  <div class="delivery-option-title">Choose a delivery  option:
+                  </div>
+                  <!--START OF DELIVERY OPTION-->
+                  <div class="delivery-option">
+                    <input type="radio" class="delivery-option-input" name="delivery-option">
+                    <div>
+                    <div class="delivery-option-date">Monday, October 20</div>
+                    <div class="delivery-option-price">FREE Shipping</div>
+                    </div>
+                  </div>
+                  <!--END OF DELIVERY OPTION-->
+                  <!--START OF DELIVERY OPTION-->
+                  <div class="delivery-option">
+                    <input type="radio" class="delivery-option-input" name="delivery-option">
+                    <div>
+                    <div class="delivery-option-date">Tuesday, October 21</div>
+                    <div class="delivery-option-price">PHP 200 - Shipping</div>
+                    </div>
+                  </div>
+                  <!--END OF DELIVERY OPTION-->
+                  <!--START OF DELIVERY OPTION-->
+                  <div class="delivery-option">
+                    <input type="radio" class="delivery-option-input" name="delivery-option">
+                    <div>
+                    <div class="delivery-option-date">Wednesday, October 23</div>
+                    <div class="delivery-option-price">PHP 150 - Shipping</div>
+                    </div>
+                  </div>
+                  <!--END OF DELIVERY OPTION-->
+                </div>
+              </div>
+              <!--END OF CART-ITEM-DETAILS-GRID-->
+            </div>
+          </div>
+          <class class="payment-summary">
+            <div class="js-payment-info">
+              <div class="payment-summary-title">Order Summary</div>
+              <div class="payment-summary-row">
+                <div>Items: ():</div>
+                <div class="payment-summary-money" data-testid="">PHP 00000</div>
+              </div>
+              <div class="payment-summary-row">
+                <div>Shipping & Handling</div>
+                <div class="payment-summary-money">PHP 000</div>
+              </div>
+              <div class="payment-summary-row subtotal-row">
+                <div>Total before tax: 000</div>
+                <div class="payment-summary-money ">000</div>
+              </div>
+              <div class="payment-summary-row total-row">
+                <div>Order Total: </div>
+                <div class="payment-summary-money"> PHP 000</div>
+              </div>
+              <div class="js-payment-buttons-container">
+                <button class="place-order-button button-primary">
+                  Place Your Order
+                </button>
               </div>
             </div>
-            <!--END OF CART-ITEM-DETAILS-GRID-->
-          </div>
-        </div>
-      </section>
-    </main>
-</body>
-</html>
+          </class>
+        </section>
+      </main>
+  </body>
+  </html>

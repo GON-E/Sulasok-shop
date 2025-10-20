@@ -2,6 +2,10 @@ body {
   font-family: SUZE Mono, Arial;
 }
 
+div {
+  display: block;
+}
+
 .checkout-header, .header-content, .middle-section, .right-section {
   display: flex;
 }
@@ -69,7 +73,7 @@ main {
   align-items: start;
 }
 
-.cart-item-container {
+.cart-item-container, .payment-summary {
   border: 1px solid lightgray;
   border-radius: 3px;
   padding: 18px;
@@ -115,4 +119,43 @@ main {
 .link-primary {
   color: #017cb6;
   cursor: pointer;
+}
+.payment-summary, .payment-summary-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.payment-summary-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.payment-summary, .payment-summary-money {
+  text-align: left;
+}
+
+ .total-row {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  font-size: 20px;
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 16px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding-top: 13px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.button-primary {
+  color: rgb(33, 33, 33);
+  background-color: rgb(255, 216, 20);
+  border: 1px solid rgb(252  , 210,0);
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213 , 217, 217, 0.5);
 }
