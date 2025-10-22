@@ -34,59 +34,11 @@
       <main>
         <div class="page-title">Review your Order </div>
         <section class="checkout-grid">
-          <div class="cart-summary">
-            <div class="cart-item-container">
-              <div class="delivery-date">
-                Delivery date: <span class="js-delivery-date">Monday, October 20</span>
-              </div>
-              <!--START OF CART-ITEM-DETAILS-GRID-->
-              <div class="cart-item-details-grid">
-                <img src="/images/products/whiteT.jpg">
-                <div class="cart-item-details">
-                  <div class="product-name">White Tshirt</div>
-                  <div class="product-price">PHP 299</div>
-                  <div class="product-quantity">
-                    Quantity: <span> 100</span>
-                    <span class="link-primary">Update</span>
-                    <span class="link-primary">Delete</span>
-                  </div>
-                </div>
-                <div class="delivery-options">
-                  <div class="delivery-option-title">Choose a delivery  option:
-                  </div>
-                  <!--START OF DELIVERY OPTION-->
-                  <div class="delivery-option">
-                    <input type="radio" class="delivery-option-input" name="delivery-option">
-                    <div>
-                    <div class="delivery-option-date">Monday, October 20</div>
-                    <div class="delivery-option-price">FREE Shipping</div>
-                    </div>
-                  </div>
-                  <!--END OF DELIVERY OPTION-->
-                  <!--START OF DELIVERY OPTION-->
-                  <div class="delivery-option">
-                    <input type="radio" class="delivery-option-input" name="delivery-option">
-                    <div>
-                    <div class="delivery-option-date">Tuesday, October 21</div>
-                    <div class="delivery-option-price">PHP 200 - Shipping</div>
-                    </div>
-                  </div>
-                  <!--END OF DELIVERY OPTION-->
-                  <!--START OF DELIVERY OPTION-->
-                  <div class="delivery-option">
-                    <input type="radio" class="delivery-option-input" name="delivery-option">
-                    <div>
-                    <div class="delivery-option-date">Wednesday, October 23</div>
-                    <div class="delivery-option-price">PHP 150 - Shipping</div>
-                    </div>
-                  </div>
-                  <!--END OF DELIVERY OPTION-->
-                </div>
-              </div>
-              <!--END OF CART-ITEM-DETAILS-GRID-->
-            </div>
+          <div class="cart-summary js-cart-summary">
+
           </div>
-          <class class="payment-summary">
+          <!--START OF PAYMENT SUMMARY-->
+          <div class="payment-summary">
             <div class="js-payment-info">
               <div class="payment-summary-title">Order Summary</div>
               <div class="payment-summary-row">
@@ -111,8 +63,10 @@
                 </button>
               </div>
             </div>
-          </class>
+          </div>
+          <!--END OF PAYMENT SUMMARY-->
         </section>
       </main>
+      <script type="module"src="scripts/checkout.js"></script>
   </body>
   </html>

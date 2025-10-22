@@ -1,5 +1,10 @@
 // Empty cart Can be use outside cart Js 
-export const cart = [];
+export const cart = [{
+  // CREATE DEFAULT DATA
+    productId: '',
+    quantity: 0,
+  }
+];
 
 export function addToCart(productId) {
         let matchItem; // Accumulator

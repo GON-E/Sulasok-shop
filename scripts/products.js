@@ -1,5 +1,4 @@
 
-
 export const products = [{
   // Randomize Id
   id: 'item1',
