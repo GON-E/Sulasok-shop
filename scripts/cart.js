@@ -1,8 +1,13 @@
+import { products } from "./products.js";
+
 // Empty cart Can be use outside cart Js 
 export const cart = [{
   // CREATE DEFAULT DATA
-    productId: '',
-    quantity: 0,
+    productId: 'item4',
+    quantity: 2,
+  },{ 
+    productId: 'item5',
+    quantity: 1
   }
 ];
 

@@ -5,7 +5,6 @@ import { products } from "./products.js";
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
 
-
 cart.forEach((cartItem) => {
   // get the productId in the cartItem 
   const productId = cartItem.productId;
@@ -50,7 +49,7 @@ cartSummaryHTML += `
       <!--END OF DELIVERY OPTION-->
       <!--START OF DELIVERY OPTION-->
       <div class="delivery-option">
-        <input type="radio" class="delivery-option-input" name="delivery-option">
+        <input type="radio" class="delivery-option-input" name="delivery-option-${productId}">
         <div>
         <div class="delivery-option-date">Tuesday, October 21</div>
         <div class="delivery-option-price">PHP 200 - Shipping</div>
@@ -69,8 +68,9 @@ cartSummaryHTML += `
     </div>
   </div>
   <!--END OF CART-ITEM-DETAILS-GRID-->
-  </div>
-  `;
+  </div>`;
 });
 
 document.querySelector('.js-cart-summary').innerHTML = cartSummaryHTML;
+
+console.log(cartSummaryHTML);
