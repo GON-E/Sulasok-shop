@@ -2,7 +2,8 @@
 import { cart } from "./cart.js";
 import { products } from "./products.js"; 
 import { formatCurrency } from "./utils/money.js";
-
+import { updateCartQuantity } from "./sulasok.js";
+  
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
 

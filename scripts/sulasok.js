@@ -58,7 +58,7 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
 // Handles Update in the web, not the actual cart... It stays here
-function updateCartQuantity() {
+export function updateCartQuantity() {
   let cartQuantity = 0;
   // Loop through the array Cart
   cart.forEach((item) => {
