@@ -17,7 +17,7 @@ export const products = [{
     star: 3,
     count: 69
   },
-  priceCents: 2000
+  priceCents: 25000
 }, {
   id: 'item3',
   image: 'images/products/cherry-mobile.jpg',

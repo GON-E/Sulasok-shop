@@ -1,6 +1,7 @@
 // Save the Data
 import { cart } from "./cart.js";
-import { products } from "./products.js";
+import { products } from "./products.js"; 
+import { formatCurrency } from "./utils/money.js";
 
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
@@ -28,7 +29,7 @@ cartSummaryHTML += `
     <img src="${matchingProduct.image}">
     <div class="cart-item-details">
       <div class="product-name">${matchingProduct.name}</div>
-      <div class="product-price">${matchingProduct.priceCents / 100}</div>
+      <div class="product-price">${formatCurrency(matchingProduct.priceCents)}</div>
       <div class="product-quantity">
         Quantity: <span>${cartItem.quantity}</span>
         <span class="link-primary">Update</span>
@@ -66,7 +67,7 @@ cartSummaryHTML += `
       </div>
       <!--END OF DELIVERY OPTION-->
     </div>
-  </div>
+  </div> 
   <!--END OF CART-ITEM-DETAILS-GRID-->
   </div>`;
 });

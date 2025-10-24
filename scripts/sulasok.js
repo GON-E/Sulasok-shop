@@ -1,5 +1,6 @@
 import { products } from './products.js'; // from products.js
 import { cart, addToCart } from './cart.js'; // from cart.js
+import { formatCurrency } from './utils/money.js'; 
 let notificationTimeout = {}; // Object for timeout
 let productsHTML = '';
 // saves the object in the product  
@@ -26,7 +27,7 @@ products.forEach((product) => {
         </div>
         <div class="product-price-container">
           <span class="product-price">
-            PHP ${product.priceCents / 100}
+            PHP ${formatCurrency(product.priceCents)}
           </span>
         </div>
         <div class="product-quantity-container">
