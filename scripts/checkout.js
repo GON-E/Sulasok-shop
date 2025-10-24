@@ -2,7 +2,6 @@
 import { cart } from "./cart.js";
 import { products } from "./products.js"; 
 import { formatCurrency } from "./utils/money.js";
-import { updateCartQuantity } from "./sulasok.js";
   
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
@@ -42,7 +41,7 @@ cartSummaryHTML += `
       </div>
       <!--START OF DELIVERY OPTION-->
       <div class="delivery-option">
-        <input type="radio" class="delivery-option-input" name="delivery-option">
+        <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
         <div>
         <div class="delivery-option-date">Monday, October 20</div>
         <div class="delivery-option-price">FREE Shipping</div>
@@ -51,7 +50,7 @@ cartSummaryHTML += `
       <!--END OF DELIVERY OPTION-->
       <!--START OF DELIVERY OPTION-->
       <div class="delivery-option">
-        <input type="radio" class="delivery-option-input" name="delivery-option-${productId}">
+        <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
         <div>
         <div class="delivery-option-date">Tuesday, October 21</div>
         <div class="delivery-option-price">PHP 200 - Shipping</div>
@@ -60,7 +59,7 @@ cartSummaryHTML += `
       <!--END OF DELIVERY OPTION-->
       <!--START OF DELIVERY OPTION-->
       <div class="delivery-option">
-        <input type="radio" class="delivery-option-input" name="delivery-option">
+        <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProduct.id}">
         <div>
         <div class="delivery-option-date">Wednesday, October 23</div>
         <div class="delivery-option-price">PHP 150 - Shipping</div>
