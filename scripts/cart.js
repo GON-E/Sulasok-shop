@@ -1,7 +1,7 @@
 import { products } from "./products.js";
 
 // Empty cart Can be use outside cart Js 
-export const cart = [{
+export let   cart = [{
   // CREATE DEFAULT DATA
     productId: 'item4',
     quantity: 2,
@@ -28,4 +28,18 @@ export function addToCart(productId) {
         // Push in Cart 
         cart.push({productId, quantity});
       }
+}
+
+// Will take the productId then remove it from the cart
+export function removeFromCart(productId){
+  // Create new array
+  let newCart = [];
+
+  cart.forEach((cartItem) => {
+    if(cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  })
+  // Reassigning cart to newCart
+  cart = newCart;
 }
