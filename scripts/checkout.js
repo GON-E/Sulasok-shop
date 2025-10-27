@@ -2,7 +2,7 @@
 import { cart, removeFromCart} from "./cart.js";
 import { products } from "./products.js"; 
 import { formatCurrency } from "./utils/money.js";
-  
+ 
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
 
@@ -71,6 +71,7 @@ cartSummaryHTML += `
   <!--END OF CART-ITEM-DETAILS-GRID-->
   </div>`;
 });
+
 
 document.querySelector('.js-cart-summary').innerHTML = cartSummaryHTML;
 

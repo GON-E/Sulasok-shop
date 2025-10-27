@@ -1,7 +1,10 @@
 import { products } from "./products.js";
 
 // Empty cart Can be use outside cart Js 
-export let   cart = [{
+export let cart = JSON.parse(localStorage.getItem('cart'));
+
+if(!cart) {
+  cart = [{
   // CREATE DEFAULT DATA
     productId: 'item4',
     quantity: 2,
@@ -9,7 +12,15 @@ export let   cart = [{
     productId: 'item5',
     quantity: 1
   }
-];
+];  
+}
+
+
+// Saving to LocalStorage
+function saveToStorage(){
+  // Convert into string
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
 
 export function addToCart(productId) {
         let matchItem; // Accumulator
@@ -28,6 +39,8 @@ export function addToCart(productId) {
         // Push in Cart 
         cart.push({productId, quantity});
       }
+    // Whenever Update Happens save to storage
+  saveToStorage();
 }
 
 // Will take the productId then remove it from the cart
@@ -42,4 +55,7 @@ export function removeFromCart(productId){
   })
   // Reassigning cart to newCart
   cart = newCart;
+
+  // Whenever Update Happens save to storage
+  saveToStorage();
 }
