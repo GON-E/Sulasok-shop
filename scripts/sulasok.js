@@ -64,7 +64,7 @@ export function updateCartQuantity() {
   cart.forEach((item) => {
       // Save all the quantity in cartQuantity
     cartQuantity += item.quantity;
-  });
+  });     
       // Cart quantity changes
   document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
 }

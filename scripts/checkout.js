@@ -88,3 +88,12 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
     container.remove();
   })
 });
+
+  let cartQuantity = 0;
+  // Loop through the array Cart
+  cart.forEach((item) => {
+      // Save all the quantity in cartQuantity
+    cartQuantity += item.quantity;
+  });       
+      // Cart quantity changes
+  document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
