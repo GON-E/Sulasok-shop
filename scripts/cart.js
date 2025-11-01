@@ -14,8 +14,6 @@ if(!cart) {
   }
 ];  
 }
-
-
 // Saving to LocalStorage
 function saveToStorage(){
   // Convert into string
@@ -58,4 +56,15 @@ export function removeFromCart(productId){
 
   // Whenever Update Happens save to storage
   saveToStorage();
+}
+
+export function calculateCartQuantity() {
+  let cartQuantity = 0;
+  // Loop through the array Cart
+  cart.forEach((item) => {
+  // Save all the quantity in cartQuantity
+  cartQuantity += item.quantity;
+  });         
+  // Cart quantity changes
+ return cartQuantity;
 }

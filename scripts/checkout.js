@@ -1,10 +1,11 @@
 // Save the Data
-import { cart, removeFromCart} from "./cart.js";
+import { cart, removeFromCart, calculateCartQuantity} from "./cart.js";
 import { products } from "./products.js"; 
 import { formatCurrency } from "./utils/money.js";
  
 // Combine everything then put it inside the cartSummaryHTML
 let cartSummaryHTML = '';
+let cartQuantityHTML = '';
 
 cart.forEach((cartItem) => {
   // get the productId in the cartItem 
@@ -32,7 +33,7 @@ cartSummaryHTML += `
       <div class="product-price">${formatCurrency(matchingProduct.priceCents)}</div>
       <div class="product-quantity">
         Quantity: <span>${cartItem.quantity}</span>
-        <span class="link-primary">Update</span>
+        <span class="link-primary js-update-link" data-product-id=${matchingProduct.id}>Update</span>
         <span class="link-primary js-delete-link" data-product-id="${matchingProduct.id}">Delete</span>
       </div>
     </div>
@@ -75,13 +76,13 @@ cartSummaryHTML += `
 
 document.querySelector('.js-cart-summary').innerHTML = cartSummaryHTML;
 
-
 // Loop through all delete links (based on how many orders)
 document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
     // Remove the product in the cart and remove the product
     const productId = link.dataset.productId;
     removeFromCart(productId);
+    calculateCartQuantity();
     // Select a specific item using the productId
     const container = document.querySelector(`.js-cart-item-container-${productId}`);  
     // remove the container itself
@@ -89,11 +90,14 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   })
 });
 
-  let cartQuantity = 0;
-  // Loop through the array Cart
-  cart.forEach((item) => {
-      // Save all the quantity in cartQuantity
-    cartQuantity += item.quantity;
-  });       
-      // Cart quantity changes
-  document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
+// Get the totalCartQuantity from cart to checkout using cartQuantity;
+const cartQuantity = calculateCartQuantity();
+// Modify the DOM using innerHTML = cartQuantity
+document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
+
+document.querySelectorAll('.js-update-link').forEach((update) => {
+  update.addEventListener('click', () => {
+    const productId = link.dataset.productId;
+    console.log(productId); 
+  })
+});
