@@ -83,7 +83,7 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
   function showAddedNotification(productId) { 
     let notification = document.querySelector(`.js-added-to-cart[data-product-id="${productId}"]`);
     if(!notification) return; 
-
+    
     notification.innerHTML = 'Added!'; // NOTIFICATION
 
     clearTimeout(notificationTimeout[productId]) // CLEAR TIMEOUT FOR CERTAINE PRODUCT 
