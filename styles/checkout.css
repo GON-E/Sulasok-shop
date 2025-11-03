@@ -121,6 +121,11 @@ main {
   color: #017cb6;
   cursor: pointer;
 }
+
+.quantity-input {
+  width: 30px;
+}
+
 .payment-summary, .payment-summary-row {
   display: grid;
   grid-template-columns: 1fr auto;

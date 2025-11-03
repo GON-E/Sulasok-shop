@@ -33,7 +33,9 @@ cartSummaryHTML += `
       <div class="product-price">${formatCurrency(matchingProduct.priceCents)}</div>
       <div class="product-quantity">
         Quantity: <span>${cartItem.quantity}</span>
-        <span class="link-primary js-update-link" data-product-id=${matchingProduct.id}>Update</span>
+        <span class="link-primary js-update-link" data-product-id="${matchingProduct.id}">Update</span>
+        <input type="text" class="quantity-input">
+        <span class="save-quantity-link">Save</span>
         <span class="link-primary js-delete-link" data-product-id="${matchingProduct.id}">Delete</span>
       </div>
     </div>
@@ -76,11 +78,14 @@ cartSummaryHTML += `
 
 document.querySelector('.js-cart-summary').innerHTML = cartSummaryHTML;
 
+console.log('Number of update links found:', document.querySelectorAll('.js-update-link').length);
+
 // Loop through all delete links (based on how many orders)
 document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
     // Remove the product in the cart and remove the product
     const productId = link.dataset.productId;
+    
     removeFromCart(productId);
     calculateCartQuantity();
     // Select a specific item using the productId
@@ -90,14 +95,14 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   })
 });
 
-// Get the totalCartQuantity from cart to checkout using cartQuantity;
-const cartQuantity = calculateCartQuantity();
-// Modify the DOM using innerHTML = cartQuantity
-document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
-
-document.querySelectorAll('.js-update-link').forEach((update) => {
-  update.addEventListener('click', () => {
+document.querySelectorAll('.js-update-link').forEach((link) => {
+  link.addEventListener('click', () => {
     const productId = link.dataset.productId;
     console.log(productId); 
   })
 });
+
+// Get the totalCartQuantity from cart to checkout using cartQuantity;
+const cartQuantity = calculateCartQuantity();
+// Modify the DOM using innerHTML = cartQuantity
+document.querySelector('.return-to-home-link').innerHTML = cartQuantity;
